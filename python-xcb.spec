@@ -2,7 +2,7 @@
 
 Name:    python-xcb
 Version: 1.2
-Release: %mkrel 2
+Release: %mkrel 3
 
 Summary:   X Python Binding, based on the X C Binding (XCB) library
 Group:     Development/Python
@@ -10,11 +10,11 @@ License:   Public Domain
 URL:       http://xcb.freedesktop.org/XcbPythonBinding/
 BuildRoot: %{_tmppath}/%{src_name}-root
 Source:    http://xcb.freedesktop.org/dist/xpyb-%{version}.tar.bz2
+Patch0:	   xpyb-1.2-link.patch
+BuildRequires: libxcb-devel
+BuildRequires: python-devel
 
-BuildRequires: x11-proto-devel
-%py_requires -d
-
-Provides: %{src_name}
+Provides: %{src_name} = %version-%release
 
 %description
 The Python binding for XCB allows the X protocol to be accessed directly from
@@ -31,6 +31,7 @@ libraries are not required.
 
 %prep
 %setup -q -n %{src_name}-%{version}
+%patch0 -p0
 
 %build
 %configure2_5x
