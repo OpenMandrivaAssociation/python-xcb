@@ -2,7 +2,7 @@
 
 Name:    python-xcb
 Version: 1.2
-Release: %mkrel 1
+Release: %mkrel 2
 
 Summary:   X Python Binding, based on the X C Binding (XCB) library
 Group:     Development/Python
