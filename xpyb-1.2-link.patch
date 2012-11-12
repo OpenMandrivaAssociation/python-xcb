@@ -1,0 +1,30 @@
+--- src/Makefile.am.link	2010-11-04 08:20:57.000000000 +0100
++++ src/Makefile.am	2010-11-04 08:21:27.000000000 +0100
+@@ -9,10 +9,10 @@
+ 
+ pkgpython_LTLIBRARIES = xcb.la
+ 
+-xcb_la_LIBADD = $(LIBXCB_LIBS)
++xcb_la_LIBADD = $(LIBXCB_LIBS) -lpython$(PYTHON_VERSION)
+ xcb_la_CPPFLAGS = -I$(PYTHON_INCLUDE)
+ xcb_la_CFLAGS = -g $(CWARNFLAGS)
+-xcb_la_LDFLAGS = -module
++xcb_la_LDFLAGS = -module -avoid-version
+ xcb_la_SOURCES = conn.c constant.c cookie.c error.c event.c except.c \
+ 		 ext.c extkey.c iter.c list.c module.c protobj.c \
+ 		 reply.c request.c response.c struct.c union.c void.c \
+--- src/Makefile.in.link	2010-11-04 08:21:36.000000000 +0100
++++ src/Makefile.in	2010-11-04 08:21:53.000000000 +0100
+@@ -300,10 +300,10 @@
+ 	$(am__append_34) $(am__append_36) $(am__append_38) \
+ 	$(am__append_40) $(am__append_42) $(am__append_44)
+ pkgpython_LTLIBRARIES = xcb.la
+-xcb_la_LIBADD = $(LIBXCB_LIBS)
++xcb_la_LIBADD = $(LIBXCB_LIBS) -lpython$(PYTHON_VERSION)
+ xcb_la_CPPFLAGS = -I$(PYTHON_INCLUDE)
+ xcb_la_CFLAGS = -g $(CWARNFLAGS)
+-xcb_la_LDFLAGS = -module
++xcb_la_LDFLAGS = -module -avoid-version
+ xcb_la_SOURCES = conn.c constant.c cookie.c error.c event.c except.c \
+ 		 ext.c extkey.c iter.c list.c module.c protobj.c \
+ 		 reply.c request.c response.c struct.c union.c void.c \
