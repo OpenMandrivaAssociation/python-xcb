@@ -7,7 +7,7 @@ Release:	1
 Summary:	X Python Binding, based on the X C Binding (XCB) library
 Group:		Development/Python
 License:	Public Domain
-URL:		http://xcb.freedesktop.org/XcbPythonBinding/
+URL:		https://xcb.freedesktop.org/XcbPythonBinding/
 Source0:	http://xcb.freedesktop.org/dist/xpyb-%{version}.tar.bz2
 Patch0:		xpyb-1.2-link.patch
 BuildRequires:	libxcb-devel
